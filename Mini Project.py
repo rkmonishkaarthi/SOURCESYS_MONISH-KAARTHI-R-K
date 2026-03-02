@@ -29,3 +29,8 @@ weights = np.array([0.05, 0.05, 0.08, 0.1, 0.12, 0.1, 0.1, 0.15, 0.15, 0.1])
 weighted_performance = np.dot(sales, weights)
 print("\nWeighted Performance:\n", weighted_performance)
 
+min = sales.min()
+max = sales.max()
+
+normalized = (sales - min) / (max - min)
+print("\nNormalized Sales Data:\n", normalized)
