@@ -20,3 +20,7 @@ print("\nEmployee Sales Std:\n", employee_std)
 
 low = np.where(employee_avg < 40)
 print("\nEmployees Below Target:\n", low)
+
+ranking = np.argsort(employee_avg)
+top3 = ranking[-3:]
+print("\nTop 3 Employees:\n", top3)
