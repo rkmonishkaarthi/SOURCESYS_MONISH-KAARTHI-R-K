@@ -34,3 +34,6 @@ max = sales.max()
 
 normalized = (sales - min) / (max - min)
 print("\nNormalized Sales Data:\n", normalized)
+
+percentile_90 = np.percentile(employee_avg, 90)
+print("\n90th Percentile of Employee Avg:", percentile_90)
