@@ -12,3 +12,6 @@ df["review_rating"] = df["review_rating"].str.extract(r'(\d+\.?\d*)').astype(flo
 
 df["review_rating"] = df["review_rating"].fillna(df["review_rating"].mean())
 print(df)
+
+df1 = df.dropna(axis=1)
+print(df1)
