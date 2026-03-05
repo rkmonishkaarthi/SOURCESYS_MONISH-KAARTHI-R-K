@@ -24,3 +24,6 @@ print(df.dtypes)
 
 df["best_avg_score"] = df["best_avg_score"].astype("float32")
 print(df.dtypes)
+
+sorted_df = df.sort_values(["review_rating"], ascending=[True])
+print(sorted_df)
