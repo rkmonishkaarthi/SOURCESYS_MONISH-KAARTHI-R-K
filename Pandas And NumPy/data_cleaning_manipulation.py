@@ -47,3 +47,6 @@ print(df)
 
 df["product_name"] = df["product_name"].str.lower()
 print(df)
+
+contains_amazon = df["link"].str.contains("amazon")
+print(contains_amazon)
