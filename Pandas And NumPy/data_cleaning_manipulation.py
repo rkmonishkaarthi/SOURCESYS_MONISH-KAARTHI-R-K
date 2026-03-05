@@ -15,3 +15,7 @@ print(df)
 
 df1 = df.dropna(axis=1)
 print(df1)
+
+df.rename(columns={"name": "product_name"}, inplace=True)
+df.rename(columns={"main_category": "category"}, inplace=True)
+print(df)
