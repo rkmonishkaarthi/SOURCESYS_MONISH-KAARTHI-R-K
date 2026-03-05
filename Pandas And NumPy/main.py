@@ -11,9 +11,9 @@ print(df4)
 
 dataset = pd.read_csv("ecommerce.csv")
 
-print(dataset[dataset['Sales'] >5000])
-
 print(dataset[['Product Name','Sales','Profit']])
+
+print(dataset[dataset['Sales'] >5000])
 
 dataset['Cost'] = dataset['Sales'] - dataset['Profit']
 print(dataset['Cost'])
