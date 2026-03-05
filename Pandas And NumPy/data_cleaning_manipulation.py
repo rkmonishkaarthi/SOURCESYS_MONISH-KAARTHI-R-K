@@ -44,3 +44,6 @@ print(df.duplicated())
 
 df.drop_duplicates(inplace=True)
 print(df)
+
+df["product_name"] = df["product_name"].str.lower()
+print(df)
