@@ -27,3 +27,6 @@ print(df.dtypes)
 
 sorted_df = df.sort_values(["review_rating"], ascending=[True])
 print(sorted_df)
+
+conditional_sort = df[(df["review_rating"] > 3) & (df["best_avg_score"] > 0)]
+print(conditional_sort)
