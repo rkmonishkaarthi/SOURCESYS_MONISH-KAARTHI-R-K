@@ -27,3 +27,14 @@ print(sum_price)
 
 mul_agg = df.groupby("main_category")["actual_price"].agg(["mean","sum","count"])
 print(mul_agg)
+
+extra_data = {
+    "name": df["name"].head(6),
+    "bonus": [1000,1000,1000,1000,1000,1000]
+}
+
+extra_df = pd.DataFrame(extra_data)
+
+merged_df = pd.merge(df, extra_df, on="name", how="left")
+
+print(merged_df.head())
