@@ -43,3 +43,8 @@ print(merged_df.head())
 concat_df = pd.concat([df.head(5), df.tail(5)])
 
 print(concat_df)
+
+corr = df[["actual_price","no_of_ratings"]].corr()
+
+print("Correlation analysis")
+print(corr)
