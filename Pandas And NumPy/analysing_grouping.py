@@ -24,3 +24,6 @@ print(count_products)
 
 print("Total price by category")
 print(sum_price)
+
+mul_agg = df.groupby("main_category")["actual_price"].agg(["mean","sum","count"])
+print(mul_agg)
