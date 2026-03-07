@@ -38,3 +38,8 @@ extra_df = pd.DataFrame(extra_data)
 merged_df = pd.merge(df, extra_df, on="name", how="left")
 
 print(merged_df.head())
+
+
+concat_df = pd.concat([df.head(5), df.tail(5)])
+
+print(concat_df)
