@@ -98,3 +98,18 @@ bike_array = np.array(df["BikeCount"])
 ratio = np.mean(car_array / (bike_array + 1))
 
 print("\nAverage Car/Bike Ratio:", ratio)
+
+# Simple Traffic Prediction
+
+conditions = [
+    df["Total"] < 20,
+    df["Total"] < 50,
+    df["Total"] >= 50
+]
+
+choices = ["Low","Moderate","Heavy"]
+
+df["Predicted_Traffic"] = np.select(conditions, choices, default="Unknown")
+
+print("\nPredicted vs Actual Traffic")
+print(df[["Total","Traffic Situation","Predicted_Traffic"]].head())
