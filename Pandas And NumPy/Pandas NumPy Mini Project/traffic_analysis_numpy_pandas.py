@@ -24,3 +24,10 @@ vehicle_totals = df[vehicle_cols].sum()
 
 print("\nVehicle Distribution")
 print(vehicle_totals)
+
+# Vehicle Contribution Percentage
+
+percentage = (vehicle_totals / vehicle_totals.sum()) * 100
+
+print("\nVehicle Contribution (%)")
+print(percentage)
