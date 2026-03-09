@@ -79,3 +79,13 @@ df["Congestion_Index"] = df["Total"] / df["Total"].max()
 
 print("\nCongestion Index Sample")
 print(df[["Total","Congestion_Index"]].head())
+
+# Traffic Outlier Detection
+
+mean = np.mean(df["Total"])
+std = np.std(df["Total"])
+
+outliers = df[df["Total"] > mean + 2 * std]
+
+print("\nTraffic Outliers")
+print(outliers)
