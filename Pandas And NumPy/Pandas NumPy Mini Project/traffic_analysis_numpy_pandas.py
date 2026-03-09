@@ -16,3 +16,11 @@ df["Hour"] = df["Time"].dt.hour
 
 print("\nDataset After Cleaning")
 print(df.head())
+
+# Vehicle Distribution
+vehicle_cols = ["CarCount","BikeCount","BusCount","TruckCount"]
+
+vehicle_totals = df[vehicle_cols].sum()
+
+print("\nVehicle Distribution")
+print(vehicle_totals)
