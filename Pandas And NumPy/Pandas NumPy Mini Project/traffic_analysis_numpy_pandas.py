@@ -113,3 +113,9 @@ df["Predicted_Traffic"] = np.select(conditions, choices, default="Unknown")
 
 print("\nPredicted vs Actual Traffic")
 print(df[["Total","Traffic Situation","Predicted_Traffic"]].head())
+
+# Most Congested Record
+max_row = df.loc[df["Traffic Density Score"].idxmax()]
+
+print("\nHighest Congestion Record")
+print(max_row)
