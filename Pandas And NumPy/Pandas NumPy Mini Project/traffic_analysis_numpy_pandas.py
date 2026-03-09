@@ -31,3 +31,13 @@ percentage = (vehicle_totals / vehicle_totals.sum()) * 100
 
 print("\nVehicle Contribution (%)")
 print(percentage)
+
+# NumPy Traffic Statistics
+
+traffic_array = np.array(df["Total"])
+
+print("\nTraffic Statistics (NumPy)")
+print("Average Traffic:", np.mean(traffic_array))
+print("Maximum Traffic:", np.max(traffic_array))
+print("Minimum Traffic:", np.min(traffic_array))
+print("Standard Deviation:", np.std(traffic_array))
