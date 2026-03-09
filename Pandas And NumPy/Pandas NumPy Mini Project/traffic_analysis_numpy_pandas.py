@@ -119,3 +119,9 @@ max_row = df.loc[df["Traffic Density Score"].idxmax()]
 
 print("\nHighest Congestion Record")
 print(max_row)
+
+# Save Output Dataset
+
+df.to_csv("traffic_analysis_output.csv", index=False)
+
+print("\nAnalysis completed, Output saved to traffic_analysis_output.csv")
