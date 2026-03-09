@@ -72,3 +72,10 @@ df["Traffic Density Score"] = density_score
 
 print("\nDataset with Traffic Density Score")
 print(df.head())
+
+# Congestion Index
+
+df["Congestion_Index"] = df["Total"] / df["Total"].max()
+
+print("\nCongestion Index Sample")
+print(df[["Total","Congestion_Index"]].head())
