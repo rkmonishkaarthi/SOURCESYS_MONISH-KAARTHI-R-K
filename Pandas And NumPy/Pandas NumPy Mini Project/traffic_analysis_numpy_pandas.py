@@ -89,3 +89,12 @@ outliers = df[df["Total"] > mean + 2 * std]
 
 print("\nTraffic Outliers")
 print(outliers)
+
+# Car/Bike Ratio
+
+car_array = np.array(df["CarCount"])
+bike_array = np.array(df["BikeCount"])
+
+ratio = np.mean(car_array / (bike_array + 1))
+
+print("\nAverage Car/Bike Ratio:", ratio)
