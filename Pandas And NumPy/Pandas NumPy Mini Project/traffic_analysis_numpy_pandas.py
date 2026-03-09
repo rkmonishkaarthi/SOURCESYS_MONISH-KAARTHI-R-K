@@ -10,7 +10,7 @@ print(df.head())
 
 df["Total"] = df[["CarCount", "BikeCount", "BusCount", "TruckCount"]].sum(axis=1)
 
-df["Time"] = pd.to_datetime(df["Time"])
+df["Time"] = pd.to_datetime(df["Time"], format="%I:%M:%S %p")
 
 df["Hour"] = df["Time"].dt.hour
 
@@ -53,9 +53,22 @@ print("\nPeak Traffic Hour:", hourly_traffic.idxmax())
 
 # Day-wise Traffic Analysis
 
-day_traffic = df.groupby("Day")["Total"].sum()
+day_traffic = df.groupby("Day of the week")["Total"].sum()
 
 print("\nTraffic by Day")
 print(day_traffic)
 
 print("\nMost Busy Day:", day_traffic.idxmax())
+
+# Traffic Density Score
+# weights for vehicles
+weights = np.array([1, 0.5, 2, 2.5])
+
+vehicle_matrix = df[vehicle_cols].values
+
+density_score = np.dot(vehicle_matrix, weights)
+
+df["Traffic Density Score"] = density_score
+
+print("\nDataset with Traffic Density Score")
+print(df.head())
