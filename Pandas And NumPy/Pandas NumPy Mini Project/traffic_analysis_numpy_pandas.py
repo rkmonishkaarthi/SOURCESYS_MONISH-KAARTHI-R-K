@@ -41,3 +41,12 @@ print("Average Traffic:", np.mean(traffic_array))
 print("Maximum Traffic:", np.max(traffic_array))
 print("Minimum Traffic:", np.min(traffic_array))
 print("Standard Deviation:", np.std(traffic_array))
+
+# Peak Traffic Hour
+
+hourly_traffic = df.groupby("Hour")["Total"].mean()
+
+print("\nAverage Traffic Per Hour")
+print(hourly_traffic)
+
+print("\nPeak Traffic Hour:", hourly_traffic.idxmax())
