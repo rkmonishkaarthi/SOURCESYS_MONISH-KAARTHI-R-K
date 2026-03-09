@@ -50,3 +50,12 @@ print("\nAverage Traffic Per Hour")
 print(hourly_traffic)
 
 print("\nPeak Traffic Hour:", hourly_traffic.idxmax())
+
+# Day-wise Traffic Analysis
+
+day_traffic = df.groupby("Day")["Total"].sum()
+
+print("\nTraffic by Day")
+print(day_traffic)
+
+print("\nMost Busy Day:", day_traffic.idxmax())
