@@ -7,5 +7,6 @@ y = [120, 150, 170, 200, 220]   # Product sales
 plt.plot(x,y)
 plt.xlabel("Months")
 plt.ylabel("Sales")
-
+plt.title("Sales Graph")
+plt.legend(['Sales'])
 plt.show()
