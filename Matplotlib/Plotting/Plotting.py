@@ -23,11 +23,21 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # Histogram
-marks = [60,42,67,78,89,92,45,32,42,83,85]
+# marks = [60,42,67,78,89,92,45,32,42,83,85]
 
-plt.hist(marks)
-plt.xlabel("marks")
-plt.ylabel("frequency")
-plt.title("Marks Distribution")
-plt.savefig("histogram.png")
+# plt.hist(marks)
+# plt.xlabel("marks")
+# plt.ylabel("frequency")
+# plt.title("Marks Distribution")
+# plt.savefig("histogram.png")
+# plt.show()
+
+# Pie Chart
+mobiles = ["Apple","Samsung","Realme","Vivo","Oppo","Others"]
+price = [60000,40000,25000,28000,32000,70000]
+
+plt.pie(price, labels=mobiles, autopct="%1.1f%%", startangle=90)
+plt.title("Share")
+plt.savefig("piechart.png")
+plt.axis("equal")
 plt.show()
