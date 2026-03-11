@@ -1,43 +1,43 @@
 import matplotlib.pyplot as plt
 
 # Scatter Plot 
-hours = [2,3,4,5,6,7]
-marks = [50,55,65,75,80,95]
+hours = [1,2,3,4,5,6]
+marks = [100,200,150,300,250,350]
 
 plt.scatter(hours,marks)
 plt.xlabel("my study hours")
 plt.ylabel("my marks per subject")
 plt.title("scatter plot")
-plt.savefig("scatterplot5.png")
+plt.savefig("scatterplot6.png")
 plt.show()
 
 # Bar Plot
-products = ["Math","Science","English","History","CS"]
-sales = [78,82,75,69,90]
+products = ["Food","Transport","Rent","Shopping","Others"]
+sales = [3000,1200,8000,2000,1500]
 
 plt.bar(products,sales)
 plt.xlabel("products")
 plt.ylabel("sales")
 plt.title("product sales")
-plt.savefig("barplot5.png")
+plt.savefig("barplot6.png")
 plt.show()
 
 # Histogram
-marks = [40,45,50,55,60,65,70,75,80,85,90]
+marks = [100,150,200,250,300,350,400,450,500]
 
 plt.hist(marks)
 plt.xlabel("marks")
 plt.ylabel("frequency")
 plt.title("Marks Distribution")
-plt.savefig("histogram5.png")
+plt.savefig("histogram6.png")
 plt.show()
 
 # Pie Chart
-mobiles = ["A Grade","B Grade","C Grade","D Grade","Fail","Absent"]
-price = [35,30,20,10,3,2]
+mobiles = ["Food","Travel","Bills","Shopping","Savings","Others"]
+price = [25,20,15,10,20,10]
 
 plt.pie(price, labels=mobiles, autopct="%1.1f%%", startangle=90)
 plt.title("Share")
-plt.savefig("piechart5.png")
+plt.savefig("piechart6.png")
 plt.axis("equal")
 plt.show()
