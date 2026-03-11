@@ -11,13 +11,23 @@ import matplotlib.pyplot as plt
 # plt.savefig("scatterplot1.png")
 # plt.show()
 
-# Bar Plot
-products = ["A","B","C","D","E"]
-sales = [70,50,40,90,30]
+# # Bar Plot
+# products = ["A","B","C","D","E"]
+# sales = [70,50,40,90,30]
 
-plt.bar(products,sales)
-plt.xlabel("products")
-plt.ylabel("sales")
-plt.title("product sales")
-plt.savefig("barplot1.png")
+# plt.bar(products,sales)
+# plt.xlabel("products")
+# plt.ylabel("sales")
+# plt.title("product sales")
+# plt.savefig("barplot1.png")
+# plt.show()
+
+# Histogram
+marks = [60,42,67,78,89,92,45,32,42,83,85]
+
+plt.hist(marks)
+plt.xlabel("marks")
+plt.ylabel("frequency")
+plt.title("Marks Distribution")
+plt.savefig("histogram.png")
 plt.show()
