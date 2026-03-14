@@ -84,3 +84,35 @@ plt.ylabel("Subway Passengers")
 plt.grid(True)
 
 plt.show()
+
+# Subplots
+fig, ax = plt.subplots(2, 2, figsize=(12,8))
+
+ax[0,0].plot(data["Date"], data["Subways"], label="Subways")
+ax[0,0].plot(data["Date"], data["Buses"], label="Buses")
+ax[0,0].set_title("Transport Ridership Trend")
+ax[0,0].legend()
+ax[0,0].grid(True)
+
+transport = ["Subways","Buses","LIRR","MetroNorth"]
+avg_values = [avg_subway, avg_bus, avg_lirr, avg_metro]
+
+ax[0,1].bar(transport, avg_values)
+ax[0,1].set_title("Average Ridership")
+ax[0,1].grid(True)
+
+ax[1,0].scatter(data["Buses"], data["Subways"])
+ax[1,0].set_title("Bus vs Subway Ridership")
+ax[1,0].grid(True)
+
+ax[1,1].plot(data["Date"], data["LIRR"], label="LIRR")
+ax[1,1].plot(data["Date"], data["MetroNorth"], label="MetroNorth")
+ax[1,1].set_title("Rail Ridership Trend")
+ax[1,1].legend()
+ax[1,1].grid(True)
+
+plt.tight_layout()
+
+plt.savefig("transport_subplots.png")
+
+plt.show()
