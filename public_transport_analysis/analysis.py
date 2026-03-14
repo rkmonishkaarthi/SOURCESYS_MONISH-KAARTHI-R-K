@@ -55,6 +55,17 @@ plt.legend()
 plt.grid(True)
 
 plt.xticks(rotation=45)
+
+max_value = data["Subways"].max()
+max_index = data["Subways"].idxmax()
+max_date = data["Date"][max_index]
+
+plt.annotate(
+    "Highest Subway Ridership",
+    xy=(max_date, max_value),
+    xytext=(max_date, max_value + 200000),
+    arrowprops=dict(facecolor='black')
+)
 plt.show()
 
 transport = ["Subways", "Buses", "LIRR", "MetroNorth"]
