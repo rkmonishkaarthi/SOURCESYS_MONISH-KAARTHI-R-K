@@ -42,3 +42,17 @@ print("Average MetroNorth Ridership:", avg_metro)
 
 print("\nTotal Subway Ridership:", total_subway)
 print("Total Bus Ridership:", total_bus)
+
+plt.figure(figsize=(10,5))
+
+plt.plot(data["Date"], data["Subways"], label="Subways")
+plt.plot(data["Date"], data["Buses"], label="Buses")
+
+plt.title("Public Transport Ridership Trend")
+plt.xlabel("Date")
+plt.ylabel("Passengers")
+plt.legend()
+plt.grid(True)
+
+plt.xticks(rotation=45)
+plt.show()
