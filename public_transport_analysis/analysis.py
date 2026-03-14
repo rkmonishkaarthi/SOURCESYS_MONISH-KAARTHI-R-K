@@ -56,3 +56,18 @@ plt.grid(True)
 
 plt.xticks(rotation=45)
 plt.show()
+
+transport = ["Subways", "Buses", "LIRR", "MetroNorth"]
+avg_values = [avg_subway, avg_bus, avg_lirr, avg_metro]
+
+plt.figure(figsize=(6,4))
+
+plt.bar(transport, avg_values)
+
+plt.title("Average Transport Ridership")
+plt.xlabel("Transport Type")
+plt.ylabel("Average Passengers")
+
+plt.grid(True)
+
+plt.show()
