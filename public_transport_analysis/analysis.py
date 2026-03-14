@@ -71,3 +71,16 @@ plt.ylabel("Average Passengers")
 plt.grid(True)
 
 plt.show()
+
+
+plt.figure(figsize=(6,4))
+
+plt.scatter(data["Buses"], data["Subways"])
+
+plt.title("Bus vs Subway Ridership")
+plt.xlabel("Bus Passengers")
+plt.ylabel("Subway Passengers")
+
+plt.grid(True)
+
+plt.show()
