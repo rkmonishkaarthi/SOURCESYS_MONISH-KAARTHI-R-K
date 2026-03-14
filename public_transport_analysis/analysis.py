@@ -26,3 +26,19 @@ data = data.head(50)
 
 print("\nCleaned Dataset")
 print(data.head())
+
+avg_subway = np.mean(data["Subways"])
+avg_bus = np.mean(data["Buses"])
+avg_lirr = np.mean(data["LIRR"])
+avg_metro = np.mean(data["MetroNorth"])
+
+total_subway = np.sum(data["Subways"])
+total_bus = np.sum(data["Buses"])
+
+print("\nAverage Subway Ridership:", avg_subway)
+print("Average Bus Ridership:", avg_bus)
+print("Average LIRR Ridership:", avg_lirr)
+print("Average MetroNorth Ridership:", avg_metro)
+
+print("\nTotal Subway Ridership:", total_subway)
+print("Total Bus Ridership:", total_bus)
