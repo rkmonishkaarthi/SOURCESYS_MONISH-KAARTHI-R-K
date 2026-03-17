@@ -37,6 +37,7 @@ if uploaded_file is not None:
     col1.metric("Average Subway", int(avg_subway))
     col2.metric("Average Bus", int(avg_bus))
 
+    # ✅ Line Chart
     st.subheader("Ridership Trend")
 
     fig, ax = plt.subplots()
@@ -54,6 +55,28 @@ if uploaded_file is not None:
     plt.xticks(rotation=45)
 
     st.pyplot(fig)
+
+    st.subheader("Average Ridership Comparison")
+
+    transport = ["Subways", "Buses", "LIRR", "MetroNorth"]
+    avg_values = [
+        data["Subways"].mean(),
+        data["Buses"].mean(),
+        data["LIRR"].mean(),
+        data["MetroNorth"].mean()
+    ]
+
+    fig2, ax2 = plt.subplots()
+
+    ax2.bar(transport, avg_values)
+
+    ax2.set_title("Average Transport Ridership")
+    ax2.set_xlabel("Transport Type")
+    ax2.set_ylabel("Average Passengers")
+
+    ax2.grid(True)
+
+    st.pyplot(fig2)
 
 else:
     st.warning("Please upload a CSV file")
