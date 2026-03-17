@@ -32,8 +32,9 @@ if uploaded_file is not None:
     avg_subway = np.mean(data["Subways"])
     avg_bus = np.mean(data["Buses"])
 
-    st.write("Average Subway:", avg_subway)
-    st.write("Average Bus:", avg_bus)
+    col1, col2 = st.columns(2)
+    col1.metric("Average Subway", int(avg_subway))
+    col2.metric("Average Bus", int(avg_bus))
 
 else:
     st.warning("Please upload a CSV file")
