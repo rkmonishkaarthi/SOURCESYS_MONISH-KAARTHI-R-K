@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.title("Public Transport Analysis App")
 
@@ -9,19 +10,30 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     st.write(data.head())
 
-data = data[[
-    "Date",
-    "Subways: Total Estimated Ridership",
-    "Buses: Total Estimated Ridership",
-    "LIRR: Total Estimated Ridership",
-    "Metro-North: Total Estimated Ridership"
-]]
+    # Data cleaning
+    data = data[[
+        "Date",
+        "Subways: Total Estimated Ridership",
+        "Buses: Total Estimated Ridership",
+        "LIRR: Total Estimated Ridership",
+        "Metro-North: Total Estimated Ridership"
+    ]]
 
-data.columns = ["Date", "Subways", "Buses", "LIRR", "MetroNorth"]
+    data.columns = ["Date", "Subways", "Buses", "LIRR", "MetroNorth"]
 
-data["Date"] = pd.to_datetime(data["Date"])
-data = data.dropna()
-data = data.head(50)
+    data["Date"] = pd.to_datetime(data["Date"])
+    data = data.dropna()
+    data = data.head(50)
 
-st.write("Cleaned Data")
-st.write(data.head())
+    st.write("Cleaned Data")
+    st.write(data.head())
+
+    # Stats
+    avg_subway = np.mean(data["Subways"])
+    avg_bus = np.mean(data["Buses"])
+
+    st.write("Average Subway:", avg_subway)
+    st.write("Average Bus:", avg_bus)
+
+else:
+    st.warning("Please upload a CSV file")
