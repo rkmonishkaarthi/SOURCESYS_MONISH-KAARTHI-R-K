@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 st.title("Public Transport Analysis App")
 
@@ -35,6 +36,24 @@ if uploaded_file is not None:
     col1, col2 = st.columns(2)
     col1.metric("Average Subway", int(avg_subway))
     col2.metric("Average Bus", int(avg_bus))
+
+    st.subheader("Ridership Trend")
+
+    fig, ax = plt.subplots()
+
+    ax.plot(data["Date"], data["Subways"], label="Subways")
+    ax.plot(data["Date"], data["Buses"], label="Buses")
+
+    ax.set_title("Public Transport Ridership Trend")
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Passengers")
+
+    ax.legend()
+    ax.grid(True)
+
+    plt.xticks(rotation=45)
+
+    st.pyplot(fig)
 
 else:
     st.warning("Please upload a CSV file")
