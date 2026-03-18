@@ -78,5 +78,14 @@ if uploaded_file is not None:
 
     st.pyplot(fig2)
 
+    st.subheader("Bus vs Subway Relationship")
+    fig3, ax3 = plt.subplots()
+    ax3.scatter(data["Buses"], data["Subways"])
+    ax3.set_title("Bus vs Subway Ridership")
+    ax3.set_xlabel("Bus Passengers")
+    ax3.set_ylabel("Subway Passengers")
+    ax3.grid(True)
+    st.pyplot(fig3)
+
 else:
     st.warning("Please upload a CSV file")
