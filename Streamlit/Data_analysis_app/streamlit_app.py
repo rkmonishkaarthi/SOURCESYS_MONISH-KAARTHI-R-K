@@ -9,6 +9,20 @@ uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
+
+    # ✅ STEP 11: Dataset Validation (ADDED HERE)
+    required_columns = [
+        "Date",
+        "Subways: Total Estimated Ridership",
+        "Buses: Total Estimated Ridership",
+        "LIRR: Total Estimated Ridership",
+        "Metro-North: Total Estimated Ridership"
+    ]
+
+    if not all(col in data.columns for col in required_columns):
+        st.error("❌ Uploaded file does not have required columns")
+        st.stop()
+
     st.write(data.head())
 
     # Data cleaning
@@ -37,7 +51,7 @@ if uploaded_file is not None:
     col1.metric("Average Subway", int(avg_subway))
     col2.metric("Average Bus", int(avg_bus))
 
-    # ✅ Create all charts FIRST
+    # Create all charts FIRST
 
     # Line Chart
     fig, ax = plt.subplots()
@@ -74,7 +88,7 @@ if uploaded_file is not None:
     ax3.set_ylabel("Subway Passengers")
     ax3.grid(True)
 
-    # ✅ Chart Selector (NEW)
+    # Chart Selector
     st.subheader("Select Visualization")
 
     chart_option = st.selectbox(
