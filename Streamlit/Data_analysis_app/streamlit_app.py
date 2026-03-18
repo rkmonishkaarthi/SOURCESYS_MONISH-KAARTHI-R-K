@@ -5,12 +5,22 @@ import matplotlib.pyplot as plt
 
 st.title("Public Transport Analysis App")
 
+# ✅ STEP 12: Sidebar Controls (ADDED HERE)
+st.sidebar.header("Controls")
+
+num_rows = st.sidebar.slider(
+    "Select number of rows",
+    min_value=10,
+    max_value=100,
+    value=50
+)
+
 uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
 
-    # ✅ STEP 11: Dataset Validation (ADDED HERE)
+    # Dataset Validation
     required_columns = [
         "Date",
         "Subways: Total Estimated Ridership",
@@ -38,7 +48,9 @@ if uploaded_file is not None:
 
     data["Date"] = pd.to_datetime(data["Date"])
     data = data.dropna()
-    data = data.head(50)
+
+    # ✅ Use sidebar value here
+    data = data.head(num_rows)
 
     st.write("Cleaned Data")
     st.write(data.head())
