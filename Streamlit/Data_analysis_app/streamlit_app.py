@@ -3,101 +3,110 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title("Public Transport Analysis App")
+st.title("Universal Data Analysis App")
 
+# Sidebar
 st.sidebar.header("Controls")
 
 num_rows = st.sidebar.slider(
     "Select number of rows",
     min_value=10,
-    max_value=100,
+    max_value=200,
     value=50
 )
 
 uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
 if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file)
+    # Read CSV safely
+    data = pd.read_csv(uploaded_file, on_bad_lines='skip')
 
-    # Dataset Validation
-    required_columns = [
-        "Date",
-        "Subways: Total Estimated Ridership",
-        "Buses: Total Estimated Ridership",
-        "LIRR: Total Estimated Ridership",
-        "Metro-North: Total Estimated Ridership"
-    ]
+    # Clean column names
+    data.columns = data.columns.astype(str).str.strip()
 
-    if not all(col in data.columns for col in required_columns):
-        st.error("❌ Uploaded file does not have required columns")
+    # Fix duplicate column names
+    new_cols = []
+    seen = {}
+
+    for col in data.columns:
+        if col in seen:
+            seen[col] += 1
+            new_cols.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            new_cols.append(col)
+
+    data.columns = new_cols  # ✅ Correct placement
+
+    st.subheader("Raw Data")
+    st.write(data.head())
+
+    # Column selection
+    st.subheader("Select Columns")
+
+    columns = data.columns.tolist()
+
+    date_col = st.selectbox("Select Date Column", columns)
+    num_col1 = st.selectbox("Select First Numeric Column", columns)
+    num_col2 = st.selectbox("Select Second Numeric Column", columns)
+
+    # Convert date safely
+    try:
+        data[date_col] = pd.to_datetime(data[date_col])
+    except:
+        st.warning("Could not convert selected date column")
+
+    # Ensure numeric columns
+    try:
+        data[num_col1] = pd.to_numeric(data[num_col1])
+        data[num_col2] = pd.to_numeric(data[num_col2])
+    except:
+        st.error("Selected columns must be numeric")
         st.stop()
 
-    st.write(data.head())
-
-    # Data cleaning
-    data = data[[
-        "Date",
-        "Subways: Total Estimated Ridership",
-        "Buses: Total Estimated Ridership",
-        "LIRR: Total Estimated Ridership",
-        "Metro-North: Total Estimated Ridership"
-    ]]
-
-    data.columns = ["Date", "Subways", "Buses", "LIRR", "MetroNorth"]
-
-    data["Date"] = pd.to_datetime(data["Date"])
-    data = data.dropna()
+    # Filter data
+    data = data[[date_col, num_col1, num_col2]].dropna()
     data = data.head(num_rows)
 
-    st.write("Cleaned Data")
+    st.subheader("Processed Data")
     st.write(data.head())
 
-    # Stats
-    avg_subway = np.mean(data["Subways"])
-    avg_bus = np.mean(data["Buses"])
+    # Metrics
+    avg1 = data[num_col1].mean()
+    avg2 = data[num_col2].mean()
 
     col1, col2 = st.columns(2)
-    col1.metric("Average Subway", int(avg_subway))
-    col2.metric("Average Bus", int(avg_bus))
+    col1.metric(f"Average {num_col1}", int(avg1))
+    col2.metric(f"Average {num_col2}", int(avg2))
 
     # Charts
 
-    # Line Chart
+    # Line chart
     fig, ax = plt.subplots()
-    ax.plot(data["Date"], data["Subways"], label="Subways")
-    ax.plot(data["Date"], data["Buses"], label="Buses")
-    ax.set_title("Public Transport Ridership Trend")
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Passengers")
+    ax.plot(data[date_col], data[num_col1], label=num_col1)
+    ax.plot(data[date_col], data[num_col2], label=num_col2)
+    ax.set_title("Trend Analysis")
+    ax.set_xlabel(date_col)
+    ax.set_ylabel("Values")
     ax.legend()
     ax.grid(True)
     plt.xticks(rotation=45)
 
-    # Bar Chart
-    transport = ["Subways", "Buses", "LIRR", "MetroNorth"]
-    avg_values = [
-        data["Subways"].mean(),
-        data["Buses"].mean(),
-        data["LIRR"].mean(),
-        data["MetroNorth"].mean()
-    ]
-
+    # Bar chart
     fig2, ax2 = plt.subplots()
-    ax2.bar(transport, avg_values)
-    ax2.set_title("Average Transport Ridership")
-    ax2.set_xlabel("Transport Type")
-    ax2.set_ylabel("Average Passengers")
+    ax2.bar([num_col1, num_col2], [avg1, avg2])
+    ax2.set_title("Average Comparison")
     ax2.grid(True)
 
-    # Scatter Plot
+    # Scatter plot
     fig3, ax3 = plt.subplots()
-    ax3.scatter(data["Buses"], data["Subways"])
-    ax3.set_title("Bus vs Subway Ridership")
-    ax3.set_xlabel("Bus Passengers")
-    ax3.set_ylabel("Subway Passengers")
+    ax3.scatter(data[num_col1], data[num_col2])
+    ax3.set_title("Relationship Analysis")
+    ax3.set_xlabel(num_col1)
+    ax3.set_ylabel(num_col2)
     ax3.grid(True)
 
-    # Chart Selector
+    # Chart selector
     st.subheader("Select Visualization")
 
     chart_option = st.selectbox(
@@ -114,12 +123,13 @@ if uploaded_file is not None:
     elif chart_option == "Scatter Plot":
         st.pyplot(fig3)
 
+    # Download
     csv = data.to_csv(index=False)
 
     st.download_button(
-        label="Download Cleaned Data",
+        label="Download Processed Data",
         data=csv,
-        file_name="cleaned_data.csv",
+        file_name="processed_data.csv",
         mime="text/csv"
     )
 
