@@ -37,27 +37,20 @@ if uploaded_file is not None:
     col1.metric("Average Subway", int(avg_subway))
     col2.metric("Average Bus", int(avg_bus))
 
-    # ✅ Line Chart
-    st.subheader("Ridership Trend")
+    # ✅ Create all charts FIRST
 
+    # Line Chart
     fig, ax = plt.subplots()
-
     ax.plot(data["Date"], data["Subways"], label="Subways")
     ax.plot(data["Date"], data["Buses"], label="Buses")
-
     ax.set_title("Public Transport Ridership Trend")
     ax.set_xlabel("Date")
     ax.set_ylabel("Passengers")
-
     ax.legend()
     ax.grid(True)
-
     plt.xticks(rotation=45)
 
-    st.pyplot(fig)
-
-    st.subheader("Average Ridership Comparison")
-
+    # Bar Chart
     transport = ["Subways", "Buses", "LIRR", "MetroNorth"]
     avg_values = [
         data["Subways"].mean(),
@@ -67,25 +60,36 @@ if uploaded_file is not None:
     ]
 
     fig2, ax2 = plt.subplots()
-
     ax2.bar(transport, avg_values)
-
     ax2.set_title("Average Transport Ridership")
     ax2.set_xlabel("Transport Type")
     ax2.set_ylabel("Average Passengers")
-
     ax2.grid(True)
 
-    st.pyplot(fig2)
-
-    st.subheader("Bus vs Subway Relationship")
+    # Scatter Plot
     fig3, ax3 = plt.subplots()
     ax3.scatter(data["Buses"], data["Subways"])
     ax3.set_title("Bus vs Subway Ridership")
     ax3.set_xlabel("Bus Passengers")
     ax3.set_ylabel("Subway Passengers")
     ax3.grid(True)
-    st.pyplot(fig3)
+
+    # ✅ Chart Selector (NEW)
+    st.subheader("Select Visualization")
+
+    chart_option = st.selectbox(
+        "Choose Chart",
+        ["Line Chart", "Bar Chart", "Scatter Plot"]
+    )
+
+    if chart_option == "Line Chart":
+        st.pyplot(fig)
+
+    elif chart_option == "Bar Chart":
+        st.pyplot(fig2)
+
+    elif chart_option == "Scatter Plot":
+        st.pyplot(fig3)
 
 else:
     st.warning("Please upload a CSV file")
