@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 
 st.title("Public Transport Analysis App")
 
-# ✅ STEP 12: Sidebar Controls (ADDED HERE)
 st.sidebar.header("Controls")
 
 num_rows = st.sidebar.slider(
@@ -48,8 +47,6 @@ if uploaded_file is not None:
 
     data["Date"] = pd.to_datetime(data["Date"])
     data = data.dropna()
-
-    # ✅ Use sidebar value here
     data = data.head(num_rows)
 
     st.write("Cleaned Data")
@@ -63,7 +60,7 @@ if uploaded_file is not None:
     col1.metric("Average Subway", int(avg_subway))
     col2.metric("Average Bus", int(avg_bus))
 
-    # Create all charts FIRST
+    # Charts
 
     # Line Chart
     fig, ax = plt.subplots()
@@ -116,6 +113,15 @@ if uploaded_file is not None:
 
     elif chart_option == "Scatter Plot":
         st.pyplot(fig3)
+
+    csv = data.to_csv(index=False)
+
+    st.download_button(
+        label="Download Cleaned Data",
+        data=csv,
+        file_name="cleaned_data.csv",
+        mime="text/csv"
+    )
 
 else:
     st.warning("Please upload a CSV file")
