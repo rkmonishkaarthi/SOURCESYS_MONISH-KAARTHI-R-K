@@ -1,0 +1,67 @@
+sentence,entity,label,score
+Thousands of demonstrators have marched through London to protest the war in Iraq and demand the withdrawal of British troops from that country .,London,LOC,0.9997676
+Thousands of demonstrators have marched through London to protest the war in Iraq and demand the withdrawal of British troops from that country .,Iraq,LOC,0.99985313
+Thousands of demonstrators have marched through London to protest the war in Iraq and demand the withdrawal of British troops from that country .,British,MISC,0.99975556
+"Iranian officials say they expect to get access to sealed sensitive parts of the plant Wednesday , after an IAEA surveillance system begins functioning .",Iranian,MISC,0.9997583
+"Iranian officials say they expect to get access to sealed sensitive parts of the plant Wednesday , after an IAEA surveillance system begins functioning .",IAEA,ORG,0.99767715
+"Helicopter gunships Saturday pounded militant hideouts in the Orakzai tribal region , where many Taliban militants are believed to have fled to avoid an earlier military offensive in nearby South Waziristan .",Orakzai,LOC,0.89236456
+"Helicopter gunships Saturday pounded militant hideouts in the Orakzai tribal region , where many Taliban militants are believed to have fled to avoid an earlier military offensive in nearby South Waziristan .",Taliban,MISC,0.8090161
+"Helicopter gunships Saturday pounded militant hideouts in the Orakzai tribal region , where many Taliban militants are believed to have fled to avoid an earlier military offensive in nearby South Waziristan .",South Waziristan,LOC,0.99763393
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",U,ORG,0.9969502
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",N,ORG,0.98797405
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",Jan Egeland,PER,0.99925554
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",U. S.,LOC,0.95068717
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",Indonesian,MISC,0.9993697
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",Australian,MISC,0.9994942
+"U.N. relief coordinator Jan Egeland said Sunday , U.S. , Indonesian and Australian military helicopters are ferrying out food and supplies to remote areas of western Aceh province that ground crews can not reach .",Aceh,LOC,0.99814177
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",E,PER,0.99943584
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",##gel,PER,0.9388246
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",##and,PER,0.94994813
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",Indonesia,LOC,0.99981433
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",Sri Lanka,LOC,0.9996238
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",Maldives,LOC,0.9995307
+"Mr. Egeland said the latest figures show 1.8 million people are in need of food assistance - with the need greatest in Indonesia , Sri Lanka , the Maldives and India .",India,LOC,0.9997826
+He said last week 's tsunami and the massive underwater earthquake that triggered it has affected millions in Asia and Africa .,Asia,LOC,0.99978846
+He said last week 's tsunami and the massive underwater earthquake that triggered it has affected millions in Asia and Africa .,Africa,LOC,0.9997415
+"Aid is being rushed to the region , but the U.N. official stressed that bottlenecks and a lack of infrastructure remain a challenge .",U. N,ORG,0.8861638
+Lebanese politicians are condemning Friday 's bomb blast in a Christian neighborhood of Beirut as an attempt to sow sectarian strife in the formerly war-torn country .,Lebanese,MISC,0.9996369
+Lebanese politicians are condemning Friday 's bomb blast in a Christian neighborhood of Beirut as an attempt to sow sectarian strife in the formerly war-torn country .,Christian,MISC,0.99919134
+Lebanese politicians are condemning Friday 's bomb blast in a Christian neighborhood of Beirut as an attempt to sow sectarian strife in the formerly war-torn country .,Beirut,LOC,0.9996402
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",Beirut,LOC,0.99975854
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",United Nations,ORG,0.9981153
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",New York,LOC,0.9994962
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",F,PER,0.9997433
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",##ou,PER,0.57737887
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",##ad Siniora,PER,0.8729323
+"In Beirut , a string of officials voiced their anger , while at the United Nations summit in New York , Prime Minister Fouad Siniora said the Lebanese people are resolute in preventing such attempts from destroying their spirit .",Lebanese,MISC,0.99972636
+Lebanon has suffered a series of bombings since the massive explosion in February that killed former Prime Minister Rafik Hariri and 20 other people .,Lebanon,LOC,0.9998148
+Lebanon has suffered a series of bombings since the massive explosion in February that killed former Prime Minister Rafik Hariri and 20 other people .,Ra,PER,0.99960667
+Lebanon has suffered a series of bombings since the massive explosion in February that killed former Prime Minister Rafik Hariri and 20 other people .,##fik Hariri,PER,0.8761689
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",Syria,LOC,0.9998523
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",U. N,ORG,0.92733693
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",Det,PER,0.9995747
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",##lev Mehlis,PER,0.99238324
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",Damascus,LOC,0.99977297
+"Syria is widely accused of involvement in his killing , and Friday 's explosion comes days before U.N. investigator Detlev Mehlis is to return to Damascus to interview several Syrian officials about the assassination .",Syrian,MISC,0.9997229
+The global financial crisis has left Iceland 's economy in shambles .,Iceland,LOC,0.9998462
+Israeli officials say Prime Minister Ariel Sharon will undergo a medical procedure Thursday to close a tiny hole in his heart discovered during treatment for a minor stroke suffered last month .,Israeli,MISC,0.9996444
+Israeli officials say Prime Minister Ariel Sharon will undergo a medical procedure Thursday to close a tiny hole in his heart discovered during treatment for a minor stroke suffered last month .,Ariel Sharon,PER,0.99977607
+Doctors describe the tiny hole as a minor birth defect and say it is in the partition between the upper chambers of Mr. Sharon 's heart .,Sharon,PER,0.9994185
+Doctors say they expect Mr. Sharon will make a full recovery .,Sharon,PER,0.999426
+"Mr. Sharon returned to work on December 25 , one week after his emergency hospitalization .",Sharon,PER,0.9995084
+SpaceShipOne designer Burt Rutan accepted the Ansari X Prize money and a trophy on behalf of his team Saturday during an awards ceremony in the U.S. state of Missouri .,SpaceShipOne,ORG,0.9822804
+SpaceShipOne designer Burt Rutan accepted the Ansari X Prize money and a trophy on behalf of his team Saturday during an awards ceremony in the U.S. state of Missouri .,Burt Rutan,PER,0.9986498
+SpaceShipOne designer Burt Rutan accepted the Ansari X Prize money and a trophy on behalf of his team Saturday during an awards ceremony in the U.S. state of Missouri .,Ansari X Prize,MISC,0.8925602
+SpaceShipOne designer Burt Rutan accepted the Ansari X Prize money and a trophy on behalf of his team Saturday during an awards ceremony in the U.S. state of Missouri .,U. S,LOC,0.9546173
+SpaceShipOne designer Burt Rutan accepted the Ansari X Prize money and a trophy on behalf of his team Saturday during an awards ceremony in the U.S. state of Missouri .,Missouri,LOC,0.99955446
+"To win the money , SpaceShipOne had to blast off into space twice in a two-week period and fly at least 100 kilometers above Earth .",SpaceShipOne,ORG,0.97812545
+"To win the money , SpaceShipOne had to blast off into space twice in a two-week period and fly at least 100 kilometers above Earth .",Earth,LOC,0.9902019
+"The spacecraft made its flights in late September and early October , lifting off from California 's Mojave desert .",California,LOC,0.9998031
+"The spacecraft made its flights in late September and early October , lifting off from California 's Mojave desert .",Moja,LOC,0.8231151
+"The spacecraft made its flights in late September and early October , lifting off from California 's Mojave desert .",##ve,MISC,0.6602845
+"SpaceShipOne was financed with more than $ 20 million from Paul Allen , a co-founder of the Microsoft Corporation .",SpaceShipOne,ORG,0.9897059
+"SpaceShipOne was financed with more than $ 20 million from Paul Allen , a co-founder of the Microsoft Corporation .",Paul Allen,PER,0.99962103
+"SpaceShipOne was financed with more than $ 20 million from Paul Allen , a co-founder of the Microsoft Corporation .",Microsoft Corporation,ORG,0.9993464
+"North Korea says flooding caused by last week 's typhoon , Wipha , has destroyed 14,000 homes and 1,09,000 hectares of crops .",North Korea,LOC,0.9994827
+"North Korea says flooding caused by last week 's typhoon , Wipha , has destroyed 14,000 homes and 1,09,000 hectares of crops .",W,PER,0.45592308
+The state news agency KCNA reported the damage Monday .,KCNA,ORG,0.9993348
