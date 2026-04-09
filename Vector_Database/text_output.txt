@@ -1,0 +1,13 @@
+
+--- Manual Text Search ---
+Neural networks are used in deep learning
+Artificial intelligence is changing industries
+
+--- File Text Search ---
+AI is used in self-driving cars
+Robotics uses AI for automation
+
+--- Combined Search ---
+Data science involves statistics and programming
+Data science combines statistics and computer science
+Big data helps in making better decisions
